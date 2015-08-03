@@ -11,12 +11,9 @@ using UIKit;
 
 namespace Bookworm.iOS
 {
-	[Register ("ViewController")]
-	partial class ViewController
+	[Register ("BookCell")]
+	partial class BookCell
 	{
-		[Outlet]
-		UIKit.UIButton Button { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
 		}
