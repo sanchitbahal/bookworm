@@ -14,7 +14,7 @@ namespace Bookworm.Droid
 	public class MainActivity : Activity
 	{
 		private List<string> bookNames;
-		private ListView listView1;
+		private GridView gridView1;
 
 		protected override void OnCreate(Bundle bundle)
 		{
@@ -22,15 +22,14 @@ namespace Bookworm.Droid
 		
 			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
-//			listView1 = FindViewById<ListView> (Resource.Id.Equals ("listView1"));
-			listView1 = FindViewById<ListView> (Resource.Id.listView1);
+			gridView1 = FindViewById<GridView> (Resource.Id.gridView1);
 
 			bookNames = new List<string>();
 			bookNames.Add("Lean In by Sheryl Sandberg");
 			bookNames.Add("The Untethered Soul by Michael Singer");
 
-			ArrayAdapter<string> adapter = new ArrayAdapter<string> (this, Android.Resource.Layout.SimpleListItem1, bookNames);
-			listView1.Adapter = adapter;
+			var adapter = new ImageAdapter (this);
+			gridView1.Adapter = adapter;
 
 
 		}
