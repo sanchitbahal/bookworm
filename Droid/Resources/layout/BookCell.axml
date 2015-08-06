@@ -4,10 +4,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView1" />
+        android:id="@+id/imageView1"
+        android:src="@android:drawable/ic_menu_gallery" />
     <TextView
         android:text="Text"
         android:layout_width="match_parent"

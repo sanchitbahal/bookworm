@@ -2,34 +2,30 @@
 using Android.Widget;
 using Android.Content;
 using Android.Views;
+using System.Collections.Generic;
+using Android.App;
+using System.Resources;
 
 namespace Bookworm.Droid
 {
 	public class ImageAdapter : BaseAdapter
 	{
 		private readonly Context context;
-
-		// references to our book names
-		private readonly string[] books = {
-			"Book 1",
-			"Book 2",
-			"Book 3",
-			"Book 4",
-			"Book 5"
-		};
-
+		private BookService service;
+		private readonly List<Book> books;
 
 		public ImageAdapter(Context c)
 		{
 			context = c;
+			service = new BookService();
+			books = service.GetBooks();
 		}
 
-		public override int Count
-		{
-			get { return books.Length; }
+		public override int Count {
+			get { return books.Count; }
 		}
 
-		public override Java.Lang.Object GetItem (int position)
+		public override Java.Lang.Object GetItem(int position)
 		{
 			return null;
 		}
@@ -38,28 +34,24 @@ namespace Bookworm.Droid
 		{
 			return 0;
 		}
-			
+
 		public override View GetView(int position, View convertView, ViewGroup parent)
 		{
 			View customView;
-			if (convertView == null)
-			{
-				LayoutInflater inflater = (LayoutInflater) context.GetSystemService(Context.LayoutInflaterService);
-				
-				customView = inflater.Inflate (Resource.Layout.BookCell, null);
-				
+			if (convertView == null) {
+				var inflater = (LayoutInflater)context.GetSystemService(Context.LayoutInflaterService);
+				customView = inflater.Inflate(Resource.Layout.BookCell, null);
+
+				var selectedBook = books[position];
+
 				var imageView = customView.FindViewById<ImageView>(Resource.Id.imageView1);
-				imageView.SetImageResource(Resource.Drawable.Icon);
-//				imageView.LayoutParameters = new AbsListView.LayoutParams(85, 85);
-//				imageView.SetScaleType(ImageView.ScaleType.CenterCrop);
 				imageView.SetPadding(8, 8, 8, 8);
+				imageView.SetImageResource((int)typeof(Resource.Drawable).GetField(selectedBook.Image).GetValue(null));
 
 				var textView = customView.FindViewById<TextView>(Resource.Id.textView1);
-				textView.Text = books [position];
-			}
-			else
-			{
-				customView = (View) convertView;
+				textView.Text = selectedBook.Name;
+			} else {
+				customView = (View)convertView;
 			}
 
 			return customView;

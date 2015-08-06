@@ -10,11 +10,12 @@ namespace Bookworm.iOS
 	partial class BooksCollectionViewController : UICollectionViewController
 	{
 		static NSString bookCellId = new NSString("BookCell");
-		private List<string> books;
+		private BookService service = new BookService();
+		private List<Book> books;
 
 		public BooksCollectionViewController(UICollectionViewFlowLayout layout) : base(layout)
 		{
-			books = new List<string>() { "Book 1", "Book 2", "Book 3", "Book 4", "Book 5", };
+			books = service.GetBooks();
 		}
 
 		public override void ViewDidLoad()
@@ -27,8 +28,11 @@ namespace Bookworm.iOS
 		public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
 		{
 			var bookCell = (BookCell)collectionView.DequeueReusableCell(bookCellId, indexPath);
-			bookCell.BookName = books[indexPath.Row];
-			bookCell.Image = "monkey.png";
+
+			var selectedBook = books[indexPath.Row];
+			bookCell.BookName = selectedBook.Name;
+			bookCell.Image = selectedBook.Image;
+
 			return bookCell;
 		}
 
