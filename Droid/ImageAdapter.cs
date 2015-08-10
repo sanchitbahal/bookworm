@@ -2,31 +2,22 @@
 using Android.Content;
 using Android.Views;
 using System.Collections.Generic;
-using System.Net.Http;
 
 namespace Bookworm.Droid
 {
 	public class ImageAdapter : BaseAdapter
 	{
 		private readonly Context context;
-		private BookService service;
-		private readonly List<Book> books;
+		private readonly List<Book> books = new List<Book>();
 
-		public ImageAdapter(Context c)
+		public ImageAdapter(Context c, List<Book> books)
 		{
 			context = c;
-			service = new BookService(new HttpClient());
-			books = service.GetBooks();
+			this.books = books;
 		}
 
 		public override int Count {
 			get { return books.Count; }
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			base.Dispose(disposing);
-			service.Dispose();
 		}
 
 		public override Java.Lang.Object GetItem(int position)
@@ -60,7 +51,6 @@ namespace Bookworm.Droid
 
 			return customView;
 		}
-
 	}
 }
 

@@ -1,12 +1,10 @@
-﻿using System;
-
+﻿
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Bookworm.Droid
 {
@@ -14,8 +12,9 @@ namespace Bookworm.Droid
 	public class MainActivity : Activity
 	{
 		private GridView gridView1;
+		private BookService service;
 
-		protected override void OnCreate(Bundle bundle)
+		protected async override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);
 		
@@ -23,8 +22,15 @@ namespace Bookworm.Droid
 			SetContentView(Resource.Layout.Main);
 			gridView1 = FindViewById<GridView>(Resource.Id.gridView1);
 
-			var adapter = new ImageAdapter(this);
+			service = new BookService(new HttpClient());
+			var adapter = new ImageAdapter(this, await service.GetBooksAsync());
 			gridView1.Adapter = adapter;
+		}
+
+		protected override void OnDestroy()
+		{
+			base.OnDestroy();
+			service.Dispose();
 		}
 	}
 }
