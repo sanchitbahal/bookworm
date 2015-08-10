@@ -10,18 +10,20 @@ namespace Bookworm.iOS
 	{
 		static NSString bookCellId = new NSString("BookCell");
 		private BookService service = new BookService(new HttpClient());
-		private List<Book> books;
+		private List<Book> books = new List<Book>();
 
 		public BooksCollectionViewController(UICollectionViewFlowLayout layout) : base(layout)
 		{
-			books = service.GetBooks();
 		}
 
-		public override void ViewDidLoad()
+		public async override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
 
 			CollectionView.RegisterClassForCell(typeof(BookCell), bookCellId);
+
+			books = await service.GetBooksAsync();
+			CollectionView.ReloadData();
 		}
 
 		public override void ViewDidUnload()
