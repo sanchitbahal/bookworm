@@ -1,10 +1,8 @@
-﻿using System;
-using Android.Widget;
+﻿using Android.Widget;
 using Android.Content;
 using Android.Views;
 using System.Collections.Generic;
-using Android.App;
-using System.Resources;
+using System.Net.Http;
 
 namespace Bookworm.Droid
 {
@@ -17,12 +15,18 @@ namespace Bookworm.Droid
 		public ImageAdapter(Context c)
 		{
 			context = c;
-			service = new BookService();
+			service = new BookService(new HttpClient());
 			books = service.GetBooks();
 		}
 
 		public override int Count {
 			get { return books.Count; }
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			base.Dispose(disposing);
+			service.Dispose();
 		}
 
 		public override Java.Lang.Object GetItem(int position)

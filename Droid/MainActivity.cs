@@ -25,8 +25,6 @@ namespace Bookworm.Droid
 
 			var adapter = new ImageAdapter(this);
 			gridView1.Adapter = adapter;
-
-
 		}
 	}
 }

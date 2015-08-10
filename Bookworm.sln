@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookworm", "Bookworm\Bookwo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookworm.UITests", "UITests\Bookworm.UITests.csproj", "{83195E55-2ED3-423A-8C3B-6967673F7DD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookworm.UnitTests", "Bookworm.UnitTests\Bookworm.UnitTests.csproj", "{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -31,6 +33,18 @@ Global
 		{182355FD-2CF0-42BE-BC3A-F4CA7B0B4591}.Release|iPhone.Build.0 = Release|iPhone
 		{182355FD-2CF0-42BE-BC3A-F4CA7B0B4591}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{182355FD-2CF0-42BE-BC3A-F4CA7B0B4591}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Release|iPhone.Build.0 = Release|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{1F73A771-66EB-46CE-AA0A-2E3336A66CE1}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{83195E55-2ED3-423A-8C3B-6967673F7DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{83195E55-2ED3-423A-8C3B-6967673F7DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83195E55-2ED3-423A-8C3B-6967673F7DD3}.Debug|iPhone.ActiveCfg = Debug|Any CPU

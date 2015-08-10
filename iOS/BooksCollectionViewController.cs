@@ -1,16 +1,15 @@
 using Foundation;
 using System;
-using System.CodeDom.Compiler;
 using UIKit;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Net.Http;
 
 namespace Bookworm.iOS
 {
 	partial class BooksCollectionViewController : UICollectionViewController
 	{
 		static NSString bookCellId = new NSString("BookCell");
-		private BookService service = new BookService();
+		private BookService service = new BookService(new HttpClient());
 		private List<Book> books;
 
 		public BooksCollectionViewController(UICollectionViewFlowLayout layout) : base(layout)
@@ -23,6 +22,11 @@ namespace Bookworm.iOS
 			base.ViewDidLoad();
 
 			CollectionView.RegisterClassForCell(typeof(BookCell), bookCellId);
+		}
+
+		public override void ViewDidUnload()
+		{
+			service.Dispose();
 		}
 
 		public override UICollectionViewCell GetCell(UICollectionView collectionView, NSIndexPath indexPath)
