@@ -8,11 +8,11 @@ namespace Bookworm.iOS
 {
 	partial class BooksCollectionViewController : UICollectionViewController
 	{
-		static NSString bookCellId = new NSString("BookCell");
-		private BookService service = new BookService(new HttpClient());
-		private List<Book> books = new List<Book>();
+		const string bookCellId = "BookCell";
+		BookService service = new BookService(new HttpClient());
+		List<Book> books = new List<Book>();
 
-		public BooksCollectionViewController(UICollectionViewFlowLayout layout) : base(layout)
+		public BooksCollectionViewController(IntPtr handle) : base(handle)
 		{
 		}
 
@@ -20,12 +20,10 @@ namespace Bookworm.iOS
 		{
 			base.ViewDidLoad();
 
-			CollectionView.RegisterClassForCell(typeof(BookCell), bookCellId);
-
 			books = await service.GetBooksAsync();
 			CollectionView.ReloadData();
 		}
-
+			
 		public override void ViewDidUnload()
 		{
 			service.Dispose();
@@ -41,7 +39,7 @@ namespace Bookworm.iOS
 
 			return bookCell;
 		}
-
+			
 		public override nint NumberOfSections(UICollectionView collectionView)
 		{
 			return 1;

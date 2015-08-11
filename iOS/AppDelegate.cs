@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using UIKit;
 using CoreGraphics;
+using System.Security.Principal;
 
 namespace Bookworm.iOS
 {
@@ -20,17 +21,6 @@ namespace Bookworm.iOS
 		{
 			// Override point for customization after application launch.
 			// If not required for your application you can safely delete this method
-
-			var layout = new UICollectionViewFlowLayout() {
-				ItemSize = new CGSize(90, 90),
-				MinimumInteritemSpacing = 10,
-				SectionInset = new UIEdgeInsets(10, 10, 10, 10)
-			};
-
-			var booksCollectionViewController = new BooksCollectionViewController(layout);
-			booksCollectionViewController.CollectionView.ContentInset = new UIEdgeInsets(50, 0, 0, 0);
-			Window.RootViewController = booksCollectionViewController;
-			Window.MakeKeyAndVisible();
 
 			// Code to start the Xamarin Test Cloud Agent
 			#if ENABLE_TEST_CLOUD
