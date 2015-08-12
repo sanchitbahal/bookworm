@@ -1,7 +1,7 @@
 using System;
 using UIKit;
 
-namespace Bookworm.iOS
+namespace Bookworm.iOS.ViewControllers
 {
 	partial class BookDetailsViewController : UIViewController
 	{

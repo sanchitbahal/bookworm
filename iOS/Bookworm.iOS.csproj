@@ -111,22 +111,26 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="BookCell.cs" />
-    <Compile Include="BookCell.designer.cs">
-      <DependentUpon>BookCell.cs</DependentUpon>
+    <Compile Include="ViewControllers\BookDetailsViewController.cs" />
+    <Compile Include="ViewControllers\BookDetailsViewController.designer.cs">
+      <DependentUpon>BookDetailsViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="BooksCollectionViewController.cs" />
-    <Compile Include="BooksCollectionViewController.designer.cs">
+    <Compile Include="ViewControllers\BooksCollectionViewController.cs" />
+    <Compile Include="ViewControllers\BooksCollectionViewController.designer.cs">
       <DependentUpon>BooksCollectionViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookDetailsViewController.cs" />
-    <Compile Include="BookDetailsViewController.designer.cs">
-      <DependentUpon>BookDetailsViewController.cs</DependentUpon>
+    <Compile Include="CustomViews\BookCell.cs" />
+    <Compile Include="CustomViews\BookCell.designer.cs">
+      <DependentUpon>BookCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <BundleResource Include="Resources\monkey.png" />
     <BundleResource Include="Resources\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewControllers\" />
+    <Folder Include="CustomViews\" />
   </ItemGroup>
 </Project>

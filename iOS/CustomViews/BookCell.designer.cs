@@ -9,10 +9,10 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace Bookworm.iOS
+namespace Bookworm.iOS.CustomViews
 {
-	[Register ("BookDetailsViewController")]
-	partial class BookDetailsViewController
+	[Register ("BookCell")]
+	partial class BookCell
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]

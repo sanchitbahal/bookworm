@@ -1,9 +1,7 @@
-using Foundation;
 using System;
 using UIKit;
-using CoreGraphics;
 
-namespace Bookworm.iOS
+namespace Bookworm.iOS.CustomViews
 {
 	partial class BookCell : UICollectionViewCell
 	{

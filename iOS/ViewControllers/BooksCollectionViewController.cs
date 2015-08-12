@@ -3,8 +3,9 @@ using System;
 using UIKit;
 using System.Collections.Generic;
 using System.Net.Http;
+using Bookworm.iOS.CustomViews;
 
-namespace Bookworm.iOS
+namespace Bookworm.iOS.ViewControllers
 {
 	partial class BooksCollectionViewController : UICollectionViewController
 	{
@@ -23,7 +24,7 @@ namespace Bookworm.iOS
 			books = await service.GetBooksAsync();
 			CollectionView.ReloadData();
 		}
-			
+
 		public override void ViewDidUnload()
 		{
 			service.Dispose();
@@ -39,7 +40,7 @@ namespace Bookworm.iOS
 
 			return bookCell;
 		}
-			
+
 		public override nint NumberOfSections(UICollectionView collectionView)
 		{
 			return 1;

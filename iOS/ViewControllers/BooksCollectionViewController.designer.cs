@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace Bookworm.iOS
+namespace Bookworm.iOS.ViewControllers
 {
 	[Register ("BooksCollectionViewController")]
 	partial class BooksCollectionViewController
