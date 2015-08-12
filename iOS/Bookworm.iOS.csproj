@@ -119,6 +119,10 @@
     <Compile Include="BooksCollectionViewController.designer.cs">
       <DependentUpon>BooksCollectionViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookDetailsViewController.cs" />
+    <Compile Include="BookDetailsViewController.designer.cs">
+      <DependentUpon>BookDetailsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

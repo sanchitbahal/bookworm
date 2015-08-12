@@ -49,5 +49,18 @@ namespace Bookworm.iOS
 		{
 			return books.Count;
 		}
+
+		public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+		{
+			base.PrepareForSegue(segue, sender);
+
+			var bookDetailsViewController = (BookDetailsViewController)segue.DestinationViewController;
+			var indexPath = CollectionView.GetIndexPathsForSelectedItems()[0].Row;
+			var selectedItem = books[indexPath];
+
+			bookDetailsViewController.Title = selectedItem.Name;
+			bookDetailsViewController.BookName = selectedItem.Name;
+			bookDetailsViewController.Image = selectedItem.Image;
+		}
 	}
 }
