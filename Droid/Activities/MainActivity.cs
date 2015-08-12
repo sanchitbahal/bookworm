@@ -3,8 +3,9 @@ using Android.Widget;
 using Android.OS;
 using System.Net.Http;
 using Android.Content;
+using Bookworm.Droid.Adapters;
 
-namespace Bookworm.Droid
+namespace Bookworm.Droid.Activities
 {
 	[Activity(Label = "Book Store", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
@@ -16,7 +17,6 @@ namespace Bookworm.Droid
 		{
 			base.OnCreate(bundle);
 		
-			// Set our view from the "main" layout resource
 			SetContentView(Resource.Layout.Main);
 			gridView1 = FindViewById<GridView>(Resource.Id.gridView1);
 

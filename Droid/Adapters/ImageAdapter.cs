@@ -3,7 +3,7 @@ using Android.Content;
 using Android.Views;
 using System.Collections.Generic;
 
-namespace Bookworm.Droid
+namespace Bookworm.Droid.Adapters
 {
 	public class ImageAdapter : BaseAdapter
 	{
