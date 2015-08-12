@@ -6,7 +6,7 @@
     <ImageView
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200.1dp"
         android:id="@+id/imgBook" />
     <TextView
         android:text="Text"
@@ -15,5 +15,22 @@
         android:id="@+id/txtBookName"
         android:gravity="center"
         android:textAllCaps="true"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
+    <TextView
+        android:text="by:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtBookAuthor"
+        android:gravity="center" />
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/txtBookAbstract"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scrollbars="vertical" />
 </LinearLayout>

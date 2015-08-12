@@ -29,6 +29,8 @@ namespace Bookworm.Droid.Activities
 				var bookDetailsActivity = new Intent(this, typeof(BookDetailsActivity));
 				var selectedBook = books[e.Position];
 				bookDetailsActivity.PutExtra("bookName", selectedBook.Name);
+				bookDetailsActivity.PutExtra("bookAuthor", selectedBook.Author);
+				bookDetailsActivity.PutExtra("bookAbstract", selectedBook.AbstractText);
 				bookDetailsActivity.PutExtra("bookImage", selectedBook.Image);
 				StartActivity(bookDetailsActivity);
 			};
