@@ -1,18 +1,16 @@
-﻿
-using Android.App;
+﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Threading.Tasks;
+using Android.Content;
 
 namespace Bookworm.Droid
 {
-	[Activity(Label = "Bookworm.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity(Label = "Book Store", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-		private GridView gridView1;
-		private BookService service;
+		GridView gridView1;
+		BookService service;
 
 		protected async override void OnCreate(Bundle bundle)
 		{
@@ -23,8 +21,17 @@ namespace Bookworm.Droid
 			gridView1 = FindViewById<GridView>(Resource.Id.gridView1);
 
 			service = new BookService(new HttpClient());
-			var adapter = new ImageAdapter(this, await service.GetBooksAsync());
+			var books = await service.GetBooksAsync();
+			var adapter = new ImageAdapter(this, books);
 			gridView1.Adapter = adapter;
+
+			gridView1.ItemClick += (sender, e) => {
+				var bookDetailsActivity = new Intent(this, typeof(BookDetailsActivity));
+				var selectedBook = books[e.Position];
+				bookDetailsActivity.PutExtra("bookName", selectedBook.Name);
+				bookDetailsActivity.PutExtra("bookImage", selectedBook.Image);
+				StartActivity(bookDetailsActivity);
+			};
 		}
 
 		protected override void OnDestroy()
