@@ -6,9 +6,9 @@ namespace Bookworm.iOS.ViewControllers
 	partial class BookDetailsViewController : UIViewController
 	{
 		public string Image { get; set; }
-		
+
 		public string BookName { get; set; }
-		
+
 		public BookDetailsViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -19,6 +19,13 @@ namespace Bookworm.iOS.ViewControllers
 
 			imgBook.Image = UIImage.FromBundle(Image);
 			lblBookName.Text = BookName;
+		}
+
+		public override void ViewDidLayoutSubviews()
+		{
+			base.ViewDidLayoutSubviews();
+
+			lblBookName.SizeToFit();
 		}
 	}
 }

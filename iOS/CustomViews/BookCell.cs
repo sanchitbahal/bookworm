@@ -9,14 +9,6 @@ namespace Bookworm.iOS.CustomViews
 		{
 		}
 
-		public String BookName {
-			get { return lblBookName.Text; }
-			set { 
-				lblBookName.Text = value; 
-				SetNeedsDisplay();
-			}
-		}
-
 		public String Image {
 			set { 
 				imgBook.Image = UIImage.FromBundle(value); 

@@ -40,13 +40,12 @@ namespace Bookworm.Droid.Adapters
 				var selectedBook = books[position];
 
 				var imageView = customView.FindViewById<ImageView>(Resource.Id.imageView1);
+				imageView.LayoutParameters = new LinearLayout.LayoutParams(220, 220);
+				imageView.SetScaleType(ImageView.ScaleType.FitCenter);
 				imageView.SetPadding(8, 8, 8, 8);
 				imageView.SetImageResource((int)typeof(Resource.Drawable).GetField(selectedBook.Image).GetValue(null));
-
-				var textView = customView.FindViewById<TextView>(Resource.Id.textView1);
-				textView.Text = selectedBook.Name;
 			} else {
-				customView = (View)convertView;
+				customView = convertView;
 			}
 
 			return customView;

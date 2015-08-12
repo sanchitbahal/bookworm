@@ -18,19 +18,11 @@ namespace Bookworm.iOS.CustomViews
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIImageView imgBook { get; set; }
 
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel lblBookName { get; set; }
-
 		void ReleaseDesignerOutlets ()
 		{
 			if (imgBook != null) {
 				imgBook.Dispose ();
 				imgBook = null;
-			}
-			if (lblBookName != null) {
-				lblBookName.Dispose ();
-				lblBookName = null;
 			}
 		}
 	}

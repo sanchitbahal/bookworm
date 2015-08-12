@@ -35,7 +35,6 @@ namespace Bookworm.iOS.ViewControllers
 			var bookCell = (BookCell)collectionView.DequeueReusableCell(bookCellId, indexPath);
 
 			var selectedBook = books[indexPath.Row];
-			bookCell.BookName = selectedBook.Name;
 			bookCell.Image = selectedBook.Image;
 
 			return bookCell;

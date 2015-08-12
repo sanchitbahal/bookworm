@@ -45,13 +45,25 @@ namespace Bookworm.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int Building_Microservices = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int monkey = 2130837505;
+			public const int Icon = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int monoandroidsplash = 2130837506;
+			public const int Lean_In = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int monoandroidsplash = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int The_Namesake = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int The_Secret = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int Untethered_Soul = 2130837510;
 			
 			static Drawable()
 			{
@@ -66,20 +78,17 @@ namespace Bookworm.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060004
-			public const int gridView1 = 2131099652;
+			// aapt resource value: 0x7f060003
+			public const int gridView1 = 2131099651;
 			
 			// aapt resource value: 0x7f060000
 			public const int imageView1 = 2131099648;
 			
-			// aapt resource value: 0x7f060002
-			public const int imgBook = 2131099650;
-			
 			// aapt resource value: 0x7f060001
-			public const int textView1 = 2131099649;
+			public const int imgBook = 2131099649;
 			
-			// aapt resource value: 0x7f060003
-			public const int txtBookName = 2131099651;
+			// aapt resource value: 0x7f060002
+			public const int txtBookName = 2131099650;
 			
 			static Id()
 			{

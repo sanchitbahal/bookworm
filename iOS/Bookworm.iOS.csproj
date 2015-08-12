@@ -126,11 +126,14 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <BundleResource Include="Resources\monkey.png" />
-    <BundleResource Include="Resources\placeholder.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="ViewControllers\" />
     <Folder Include="CustomViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Building_Microservices.png" />
+    <BundleResource Include="Resources\Lean_In.png" />
+    <BundleResource Include="Resources\The_Namesake.png" />
+    <BundleResource Include="Resources\The_Secret.png" />
+    <BundleResource Include="Resources\Untethered_Soul.png" />
   </ItemGroup>
 </Project>
