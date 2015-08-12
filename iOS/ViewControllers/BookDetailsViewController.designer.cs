@@ -20,6 +20,14 @@ namespace Bookworm.iOS.ViewControllers
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel lblBookAbstract { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel lblBookAuthor { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel lblBookName { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -27,6 +35,14 @@ namespace Bookworm.iOS.ViewControllers
 			if (imgBook != null) {
 				imgBook.Dispose ();
 				imgBook = null;
+			}
+			if (lblBookAbstract != null) {
+				lblBookAbstract.Dispose ();
+				lblBookAbstract = null;
+			}
+			if (lblBookAuthor != null) {
+				lblBookAuthor.Dispose ();
+				lblBookAuthor = null;
 			}
 			if (lblBookName != null) {
 				lblBookName.Dispose ();

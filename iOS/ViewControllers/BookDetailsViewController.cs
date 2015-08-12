@@ -9,6 +9,10 @@ namespace Bookworm.iOS.ViewControllers
 
 		public string BookName { get; set; }
 
+		public string BookAuthor { get; set; }
+
+		public string BookAbstract { get; set; }
+
 		public BookDetailsViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -19,6 +23,8 @@ namespace Bookworm.iOS.ViewControllers
 
 			imgBook.Image = UIImage.FromBundle(Image);
 			lblBookName.Text = BookName;
+			lblBookAuthor.Text = BookAuthor;
+			lblBookAbstract.Text = BookAbstract;
 		}
 
 		public override void ViewDidLayoutSubviews()
@@ -26,6 +32,7 @@ namespace Bookworm.iOS.ViewControllers
 			base.ViewDidLayoutSubviews();
 
 			lblBookName.SizeToFit();
+			lblBookAbstract.SizeToFit();
 		}
 	}
 }

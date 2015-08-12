@@ -61,6 +61,8 @@ namespace Bookworm.iOS.ViewControllers
 			bookDetailsViewController.Title = selectedItem.Name;
 			bookDetailsViewController.BookName = selectedItem.Name;
 			bookDetailsViewController.Image = selectedItem.Image;
+			bookDetailsViewController.BookAuthor = selectedItem.Author;
+			bookDetailsViewController.BookAbstract = selectedItem.AbstractText;
 		}
 	}
 }

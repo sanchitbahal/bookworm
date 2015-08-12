@@ -42,6 +42,7 @@
                             <outlet property="dataSource" destination="16" id="18"/>
                             <outlet property="delegate" destination="16" id="19"/>
                         </connections>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
                     </collectionView>
                     <navigationItem title="Book Store" id="71" key="navigationItem"/>
                 </collectionViewController>
@@ -85,11 +86,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Book Author" lineBreakMode="tailTruncation" minimumFontSize="10" id="732" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="139" y="171" width="135" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" text="Book Abstract" lineBreakMode="tailTruncation" minimumFontSize="10" id="733" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" alpha="1" numberOfLines="0" userInteractionEnabled="NO">
+                                <rect key="frame" x="13" y="238" width="294" height="233"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="imgBook" destination="140" id="name-outlet-140"/>
                         <outlet property="lblBookName" destination="726" id="name-outlet-726"/>
+                        <outlet property="lblBookAuthor" destination="732" id="name-outlet-732"/>
+                        <outlet property="lblBookAbstract" destination="733" id="name-outlet-733"/>
                     </connections>
                     <navigationItem title="Title" id="261" translatesAutoresizingMaskIntoConstraints="NO" key="navigationItem"/>
                 </viewController>
