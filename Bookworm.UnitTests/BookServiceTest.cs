@@ -1,8 +1,6 @@
 ﻿using NUnit.Framework;
-using System;
-using Moq;
-using System.Net.Http;
 using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace Bookworm.UnitTests
 {
